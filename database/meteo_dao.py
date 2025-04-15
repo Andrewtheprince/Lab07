@@ -35,7 +35,7 @@ class MeteoDao():
            cursor = cnx.cursor(dictionary=True)
            query = """SELECT s.Localita, s.Umidita, s.Data
                       FROM situazione s 
-                      WHERE MONTH(Data) = %s and DAY(Data) <= 15
+                      WHERE MONTH(s.Data) = %s and DAY(s.Data) <= 15
                       ORDER BY s.Data ASC"""
            cursor.execute(query, (mese,))
            for row in cursor:
