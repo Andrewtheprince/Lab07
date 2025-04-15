@@ -8,6 +8,9 @@ class Model:
         self.costoOttimo = -1
         self.soluzioneOttima = []
 
+    def umiditaMedia(self, mese):
+        return MeteoDao.get_all_situazioni(mese)
+
     def calcola_sequenza(self, mese):
         situazioni = MeteoDao.get_situazioni_meta_mese(mese)
         self._ricorsione([],situazioni)
